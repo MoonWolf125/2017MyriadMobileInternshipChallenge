@@ -1,2 +1,2 @@
 # 2017MyriadMobileInternshipChallenge
-Repository for the 2017 Myriad Mobile Internship Challenge. The challenge is to create a "quest" application. The application will sign a user up, or accept a login. Then the application will allow the user to select a kingdom, viewing it's details and possible quests.
+Repository for the 2017 Myriad Mobile Internship Challenge. The challenge is to create an Android "quest" application. The application will sign a user up, or accept a login. Then the application will allow the user to select a kingdom, viewing it's details and possible quests. All data will be retrieved using Android RetroFit from an API created and hosted by Myriad Mobile.
