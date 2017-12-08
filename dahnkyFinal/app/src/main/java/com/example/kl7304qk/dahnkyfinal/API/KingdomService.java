@@ -2,6 +2,8 @@ package com.example.kl7304qk.dahnkyfinal.API;
 
 import com.example.kl7304qk.dahnkyfinal.model.Kingdom;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -12,8 +14,8 @@ import retrofit2.http.Path;
 
 public interface KingdomService {
     @GET("kingdoms/")
-    Call<Kingdom> getKingdoms();
+    Call<List<Kingdom>> getKingdoms();
 
     @GET("kingdoms/{kingdomID}/")
-    Call<Kingdom> getKingdom(@Path("kingdomID") String kingdomID);
+    Call<Kingdom> getKingdom(@Path("kingdomID") int kingdomID);
 }

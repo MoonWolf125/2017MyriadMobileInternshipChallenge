@@ -12,5 +12,5 @@ import retrofit2.http.Path;
 
 public interface CharacterService {
     @GET("characters/{characterID}/")
-    Call<Character> getCharacter(@Path("characterID") String characterID);
+    Call<Character> getCharacter(@Path("characterID") int characterID);
 }

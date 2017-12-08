@@ -4,6 +4,8 @@ import com.example.kl7304qk.dahnkyfinal.model.Character;
 import com.example.kl7304qk.dahnkyfinal.model.Kingdom;
 import com.example.kl7304qk.dahnkyfinal.model.Quest;
 
+import java.util.List;
+
 import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -28,23 +30,23 @@ public class ApiService {
         characterService = retrofit.create(CharacterService.class);
     }
 
-    public void getKingdoms(Callback<Kingdom> callback) {
+    public void getKingdoms(Callback<List<Kingdom>> callback) {
         kingdomService.getKingdoms().enqueue(callback);
     }
 
-    public void getKingdom(String kingdomID, Callback<Kingdom> callback) {
+    public void getKingdom(int kingdomID, Callback<Kingdom> callback) {
         kingdomService.getKingdom(kingdomID).enqueue(callback);
     }
 
-    public void getQuests(String kingdomID, Callback<Quest> callback) {
+    public void getQuests(int kingdomID, Callback<List<Quest>> callback) {
         questService.getQuests(kingdomID).enqueue(callback);
     }
 
-    public void getQuest(String kingdomID, String questID, Callback<Quest> callback) {
+    public void getQuest(int kingdomID, int questID, Callback<Quest> callback) {
         questService.getQuest(kingdomID, questID).enqueue(callback);
     }
 
-    public void getCharacter(String characterID, Callback<Character> callback) {
+    public void getCharacter(int characterID, Callback<Character> callback) {
         characterService.getCharacter(characterID).enqueue(callback);
     }
 }

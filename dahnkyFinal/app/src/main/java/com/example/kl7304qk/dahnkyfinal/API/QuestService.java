@@ -2,6 +2,8 @@ package com.example.kl7304qk.dahnkyfinal.API;
 
 import com.example.kl7304qk.dahnkyfinal.model.Quest;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -12,8 +14,8 @@ import retrofit2.http.Path;
 
 public interface QuestService {
     @GET("kingdoms/{kingdomID}/quests/")
-    Call<Quest> getQuests(@Path("kingdomID") String kingdomID);
+    Call<List<Quest>> getQuests(@Path("kingdomID") int kingdomID);
 
     @GET("kingdoms/{kingdomID}/quests/{questID}/")
-    Call<Quest> getQuest(@Path("kingdomID") String kingdomID, @Path("questID") String questID);
+    Call<Quest> getQuest(@Path("kingdomID") int kingdomID, @Path("questID") int questID);
 }
