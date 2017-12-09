@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="nameTextSize">28sp</dimen>
-    <dimen name="nameImageSize">40dp</dimen>
+    <dimen name="nameTextSize">40sp</dimen>
+    <dimen name="nameImageSize">86dp</dimen>
+    <dimen name="defPadding">10dp</dimen>
+    <dimen name="secPadding">32dp</dimen>
+    <dimen name="signUpTextSize">52sp</dimen>
+    <dimen name="loginTextSize">22sp</dimen>
 </resources>

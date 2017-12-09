@@ -3,9 +3,11 @@ package com.example.kl7304qk.dahnkyfinal.API;
 import com.example.kl7304qk.dahnkyfinal.model.Character;
 import com.example.kl7304qk.dahnkyfinal.model.Kingdom;
 import com.example.kl7304qk.dahnkyfinal.model.Quest;
+import com.example.kl7304qk.dahnkyfinal.model.Subscriber;
 
 import java.util.List;
 
+import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -23,11 +25,13 @@ public class ApiService {
     private KingdomService kingdomService;
     private QuestService questService;
     private CharacterService characterService;
+    private SubscriberService subscriberService;
 
     public ApiService() {
         kingdomService = retrofit.create(KingdomService.class);
         questService = retrofit.create(QuestService.class);
         characterService = retrofit.create(CharacterService.class);
+        subscriberService = retrofit.create(SubscriberService.class);
     }
 
     public void getKingdoms(Callback<List<Kingdom>> callback) {
@@ -48,5 +52,9 @@ public class ApiService {
 
     public void getCharacter(int characterID, Callback<Character> callback) {
         characterService.getCharacter(characterID).enqueue(callback);
+    }
+
+    public void subscribe(String email, Callback<Subscriber> callback) {
+        subscriberService.subscribe(email).enqueue(callback);
     }
 }

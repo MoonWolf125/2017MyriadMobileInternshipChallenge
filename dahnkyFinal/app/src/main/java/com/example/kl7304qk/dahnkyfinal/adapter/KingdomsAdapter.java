@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.kl7304qk.dahnkyfinal.API.ApiService;
 import com.example.kl7304qk.dahnkyfinal.R;
 import com.example.kl7304qk.dahnkyfinal.activity.MainActivity;
@@ -47,7 +48,7 @@ public class KingdomsAdapter extends RecyclerView.Adapter<KingdomsAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position) {
         Kingdom kingdom = kingdoms.get(position);
         holder.kingdomName.setText(kingdom.getName());
-        Glide.with(context).load(kingdom.getImage()).into(holder.kingdomImage);
+        Glide.with(context).load(kingdom.getImage()).apply(RequestOptions.circleCropTransform()).into(holder.kingdomImage);
     }
 
     @Override

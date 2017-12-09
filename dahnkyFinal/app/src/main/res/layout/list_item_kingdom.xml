@@ -8,15 +8,17 @@
     <ImageView
         android:id="@+id/kingdomImage"
         android:layout_width="@dimen/nameImageSize"
-        android:layout_height="@dimen/nameImageSize" />
+        android:layout_height="@dimen/nameImageSize"
+        android:padding="@dimen/defPadding"/>
 
     <TextView
         android:id="@+id/kingdomName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:foregroundGravity="center_vertical"
+        android:layout_gravity="center_vertical"
         android:text="@string/test"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/nameTextSize" />
+        android:textSize="@dimen/nameTextSize"
+        android:padding="@dimen/defPadding"/>
 
 </LinearLayout>
