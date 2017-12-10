@@ -64,6 +64,23 @@ public class KingdomsAdapter extends RecyclerView.Adapter<KingdomsAdapter.ViewHo
 
             kingdomImage = (ImageView) itemView.findViewById(R.id.kingdomImage);
             kingdomName = (TextView) itemView.findViewById(R.id.kingdomName);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    apiService.getKingdom(getAdapterPosition(), new Callback<Kingdom>() {
+                        @Override
+                        public void onResponse(Call<Kingdom> call, Response<Kingdom> response) {
+                            Toast.makeText(context, Integer.toString(getAdapterPosition()), Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onFailure(Call<Kingdom> call, Throwable t) {
+                            Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            });
         }
     }
 }

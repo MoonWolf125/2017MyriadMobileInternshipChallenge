@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">dahnkyFinal</string>
-    <string name="test">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="test">LOREM</string>
     <string name="SIGNUP">SIGN UP</string>
     <string name="email">EMAIL</string>
     <string name="name">NAME</string>
     <string name="submit">SUBMIT</string>
     <string name="logout">Log out</string>
+    <string name="climate">CLIMATE</string>
+    <string name="population">POPULATION</string>
 </resources>
