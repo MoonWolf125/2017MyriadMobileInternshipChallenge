@@ -1,6 +1,7 @@
 package com.example.kl7304qk.dahnkyfinal.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.kl7304qk.dahnkyfinal.API.ApiService;
 import com.example.kl7304qk.dahnkyfinal.R;
+import com.example.kl7304qk.dahnkyfinal.activity.KingdomDetailActivity;
 import com.example.kl7304qk.dahnkyfinal.activity.MainActivity;
 import com.example.kl7304qk.dahnkyfinal.model.Kingdom;
 
@@ -72,6 +74,10 @@ public class KingdomsAdapter extends RecyclerView.Adapter<KingdomsAdapter.ViewHo
                         @Override
                         public void onResponse(Call<Kingdom> call, Response<Kingdom> response) {
                             Toast.makeText(context, Integer.toString(getAdapterPosition()), Toast.LENGTH_SHORT).show();
+                            Intent Kingdom = new Intent(context, KingdomDetailActivity.class);
+                            Kingdom.putExtra("position", getAdapterPosition());
+                            Kingdom.putExtra("count", getItemCount());
+                            context.startActivity(Kingdom);
                         }
 
                         @Override
