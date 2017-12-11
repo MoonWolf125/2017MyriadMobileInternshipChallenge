@@ -25,16 +25,16 @@ public class KingdomPagerAdapter extends FragmentPagerAdapter {
     private int position;
     private ApiService apiService;
     private Context context;
-    private  Kingdom kingdom;
+    private List<Kingdom> kingdoms;
 
     public static void addFragment(KingdomFragment kingdomFragment) {
         Log.d("GET ADD", "X");
     }
 
-    public KingdomPagerAdapter(int position, Kingdom kingdom, Context context, FragmentManager fm) {
+    public KingdomPagerAdapter(int position, List<Kingdom> kingdoms, Context context, FragmentManager fm) {
         super(fm);
         this.position = position;
-        this.kingdom = kingdom;
+        this.kingdoms = kingdoms;
         this.context = context;
         this.apiService = new ApiService();
     }
@@ -43,13 +43,11 @@ public class KingdomPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         Log.d("GET ITEM", Integer.toString(position));
         Toast.makeText(context, Integer.toString(position), Toast.LENGTH_SHORT).show();
-        KingdomFragment fragment = new KingdomFragment();
-        fragment.setInstance(kingdom);
-        return fragment;
+        return KingdomFragment.newInstance(kingdoms.get(position));
     }
 
     @Override
     public int getCount() {
-        return 1;
+        return kingdoms.size();
     }
 }

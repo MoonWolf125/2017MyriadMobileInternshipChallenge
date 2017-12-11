@@ -68,14 +68,14 @@ public class KingdomFragment extends Fragment {
         quests = (RecyclerView) view.findViewById(R.id.quests);
         quests.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        Glide.with(this).load(kingdom.getImage()).into(image);
-        climate.setText(kingdom.getClimate());
-        population.setText(Integer.toString(kingdom.getPopulation()));
+        Glide.with(this).load(getArguments().getString("image")).into(image);
+        climate.setText(getArguments().getString("climate"));
+        population.setText(Integer.toString(getArguments().getInt("population")));
 
-        apiService.getQuests(kingdom.getId(), new Callback<List<Quest>>() {
+        apiService.getQuests(getArguments().getInt("id"), new Callback<List<Quest>>() {
             @Override
             public void onResponse(Call<List<Quest>> call, Response<List<Quest>> response) {
-                quests.setAdapter(new QuestsAdapter(response.body(), kingdom.getId(), getContext()));
+                quests.setAdapter(new QuestsAdapter(response.body(), getArguments().getInt("id"), getContext()));
 
             }
 
@@ -86,9 +86,5 @@ public class KingdomFragment extends Fragment {
         });
 
         return view;
-    }
-
-    protected void setInstance(Kingdom kingdom) {
-        this.kingdom = kingdom;
     }
 }

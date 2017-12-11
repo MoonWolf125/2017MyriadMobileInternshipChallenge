@@ -38,13 +38,14 @@
                 android:layout_height="0dp"
                 android:layout_weight="8"
                 android:orientation="vertical"
-                android:layout_margin="@dimen/secPadding"
+                android:layout_marginTop="@dimen/secPadding"
+                android:layout_marginStart="@dimen/secPadding"
+                android:layout_marginEnd="@dimen/secPadding"
                 android:background="@android:color/white">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:text="@string/name"
                     android:textColor="@android:color/black"
                     android:gravity="center_vertical"/>
@@ -52,16 +53,15 @@
                 <EditText
                     android:id="@+id/name"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:textSize="@dimen/loginTextSize"
                     android:inputType="text"
-                    android:imeOptions="actionNext"/>
+                    android:imeOptions="actionNext"
+                    android:layout_marginBottom="@dimen/defPadding"/>
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:text="@string/email"
                     android:textColor="@android:color/black"
                     android:gravity="center_vertical"/>
@@ -69,8 +69,7 @@
                 <EditText
                     android:id="@+id/email"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:textSize="@dimen/loginTextSize"
                     android:inputType="text"
                     android:imeOptions="actionDone"/>
