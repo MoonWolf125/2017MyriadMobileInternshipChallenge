@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.kl7304qk.dahnkyfinal.API.ApiService;
@@ -24,25 +25,31 @@ public class KingdomPagerAdapter extends FragmentPagerAdapter {
     private int position;
     private ApiService apiService;
     private Context context;
-    private List<Kingdom> kingdoms;
+    private  Kingdom kingdom;
 
-    public KingdomPagerAdapter(int position, List<Kingdom> kingdoms, Context context, FragmentManager fm) {
+    public static void addFragment(KingdomFragment kingdomFragment) {
+        Log.d("GET ADD", "X");
+    }
+
+    public KingdomPagerAdapter(int position, Kingdom kingdom, Context context, FragmentManager fm) {
         super(fm);
         this.position = position;
-        this.kingdoms = kingdoms;
+        this.kingdom = kingdom;
         this.context = context;
         this.apiService = new ApiService();
     }
 
     @Override
     public Fragment getItem(int position) {
-        final KingdomFragment fragment = new KingdomFragment();
-        fragment.setInstance(kingdoms.get(position));
+        Log.d("GET ITEM", Integer.toString(position));
+        Toast.makeText(context, Integer.toString(position), Toast.LENGTH_SHORT).show();
+        KingdomFragment fragment = new KingdomFragment();
+        fragment.setInstance(kingdom);
         return fragment;
     }
 
     @Override
     public int getCount() {
-        return kingdoms.size();
+        return 1;
     }
 }

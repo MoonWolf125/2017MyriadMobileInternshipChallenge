@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:src="@android:drawable/sym_def_app_icon"/>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:text="@string/test"
+        android:textColor="@android:color/black"
+        android:padding="@dimen/secPadding"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/secPadding"
+        android:paddingRight="@dimen/secPadding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/characterImage"
+                android:layout_width="@dimen/kingdomImageSize"
+                android:layout_height="@dimen/kingdomImageSize"
+                android:padding="@dimen/defPadding"
+                android:src="@android:drawable/sym_def_app_icon"/>
+
+            <TextView
+                android:id="@+id/characterName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/test"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/nameTextSize"
+                android:padding="@dimen/defPadding"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/characterDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/test"
+            android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -75,7 +75,7 @@ public class KingdomsAdapter extends RecyclerView.Adapter<KingdomsAdapter.ViewHo
                         public void onResponse(Call<Kingdom> call, Response<Kingdom> response) {
                             Toast.makeText(context, Integer.toString(getAdapterPosition()), Toast.LENGTH_SHORT).show();
                             Intent Kingdom = new Intent(context, KingdomDetailActivity.class);
-                            Kingdom.putExtra("position", getAdapterPosition());
+                            Kingdom.putExtra("position", getAdapterPosition() + 1);
                             Kingdom.putExtra("count", getItemCount());
                             context.startActivity(Kingdom);
                         }

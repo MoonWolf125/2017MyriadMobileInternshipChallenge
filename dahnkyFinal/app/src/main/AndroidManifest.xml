@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".activity.LoginActivity"></activity>
         <activity android:name=".activity.KingdomDetailActivity"></activity>
+        <activity android:name=".activity.QuestDetailActivity"></activity>
     </application>
 
 </manifest>

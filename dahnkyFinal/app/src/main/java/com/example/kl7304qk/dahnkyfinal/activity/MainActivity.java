@@ -13,7 +13,9 @@ import android.widget.Toast;
 import com.example.kl7304qk.dahnkyfinal.API.ApiService;
 import com.example.kl7304qk.dahnkyfinal.R;
 import com.example.kl7304qk.dahnkyfinal.adapter.KingdomsAdapter;
+import com.example.kl7304qk.dahnkyfinal.adapter.QuestsAdapter;
 import com.example.kl7304qk.dahnkyfinal.model.Kingdom;
+import com.example.kl7304qk.dahnkyfinal.model.Quest;
 
 import java.util.List;
 

@@ -7,9 +7,10 @@
 
     <ImageView
         android:id="@+id/kingdomImage"
-        android:layout_width="@dimen/nameImageSize"
-        android:layout_height="@dimen/nameImageSize"
-        android:padding="@dimen/defPadding"/>
+        android:layout_width="@dimen/kingdomImageSize"
+        android:layout_height="@dimen/kingdomImageSize"
+        android:padding="@dimen/defPadding"
+        android:src="@android:drawable/sym_def_app_icon"/>
 
     <TextView
         android:id="@+id/kingdomName"
