@@ -8,15 +8,23 @@ import com.google.gson.annotations.SerializedName;
 
 public class Quest {
     @SerializedName("id")
-    private int id;
+    private final int id;
     @SerializedName("name")
-    private String name;
+    private final String name;
     @SerializedName("description")
-    private String description;
+    private final String description;
     @SerializedName("image")
-    private String image;
+    private final String image;
     @SerializedName("giver")
-    private Character character;
+    private final Character character;
+
+    public Quest(int id, String name, String description, String image, Character character) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.image = image;
+        this.character = character;
+    }
 
     public int getId() {
         return id;

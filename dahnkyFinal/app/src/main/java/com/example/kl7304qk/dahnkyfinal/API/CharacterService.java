@@ -10,7 +10,8 @@ import retrofit2.http.Path;
  * Created by Kyle on 12/8/2017.
  */
 
-public interface CharacterService {
+@SuppressWarnings("DefaultFileTemplate")
+interface CharacterService {
     @GET("characters/{characterID}/")
     Call<Character> getCharacter(@Path("characterID") int characterID);
 }

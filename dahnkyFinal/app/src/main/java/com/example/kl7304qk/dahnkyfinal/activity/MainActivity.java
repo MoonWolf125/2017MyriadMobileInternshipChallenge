@@ -13,9 +13,7 @@ import android.widget.Toast;
 import com.example.kl7304qk.dahnkyfinal.API.ApiService;
 import com.example.kl7304qk.dahnkyfinal.R;
 import com.example.kl7304qk.dahnkyfinal.adapter.KingdomsAdapter;
-import com.example.kl7304qk.dahnkyfinal.adapter.QuestsAdapter;
 import com.example.kl7304qk.dahnkyfinal.model.Kingdom;
-import com.example.kl7304qk.dahnkyfinal.model.Quest;
 
 import java.util.List;
 
@@ -27,9 +25,9 @@ import static com.example.kl7304qk.dahnkyfinal.activity.LoginActivity.getEmail;
 import static com.example.kl7304qk.dahnkyfinal.activity.LoginActivity.isRegistered;
 
 public class MainActivity extends AppCompatActivity {
-    ApiService apiService;
+    private ApiService apiService;
 
-    RecyclerView kingdoms;
+    private RecyclerView kingdoms;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

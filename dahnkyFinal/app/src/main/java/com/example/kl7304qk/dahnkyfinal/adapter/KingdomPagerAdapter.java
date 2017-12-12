@@ -1,12 +1,9 @@
 package com.example.kl7304qk.dahnkyfinal.adapter;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.util.Log;
 
-import com.example.kl7304qk.dahnkyfinal.API.ApiService;
 import com.example.kl7304qk.dahnkyfinal.model.Kingdom;
 
 import java.util.List;
@@ -16,26 +13,15 @@ import java.util.List;
  */
 
 public class KingdomPagerAdapter extends FragmentPagerAdapter {
-    private int position;
-    private ApiService apiService;
-    private Context context;
-    private List<Kingdom> kingdoms;
+    private final List<Kingdom> kingdoms;
 
-    public static void addFragment(KingdomFragment kingdomFragment) {
-        Log.d("GET ADD", "X");
-    }
-
-    public KingdomPagerAdapter(int position, List<Kingdom> kingdoms, Context context, FragmentManager fm) {
+    public KingdomPagerAdapter(List<Kingdom> kingdoms, FragmentManager fm) {
         super(fm);
-        this.position = position;
         this.kingdoms = kingdoms;
-        this.context = context;
-        this.apiService = new ApiService();
     }
 
     @Override
     public Fragment getItem(int position) {
-        Log.d("GET ITEM", Integer.toString(position));
         return KingdomFragment.newInstance(kingdoms.get(position));
     }
 

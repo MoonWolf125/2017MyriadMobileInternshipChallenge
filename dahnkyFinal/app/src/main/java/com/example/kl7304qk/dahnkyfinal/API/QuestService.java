@@ -12,7 +12,7 @@ import retrofit2.http.Path;
  * Created by Kyle on 12/8/2017.
  */
 
-public interface QuestService {
+interface QuestService {
     @GET("kingdoms/{kingdomID}/quests/")
     Call<List<Quest>> getQuests(@Path("kingdomID") int kingdomID);
 

@@ -1,7 +1,6 @@
 package com.example.kl7304qk.dahnkyfinal.adapter;
 
 import android.os.Bundle;
-import android.support.v4.app.BundleCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,25 +10,15 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.kl7304qk.dahnkyfinal.API.ApiService;
 import com.example.kl7304qk.dahnkyfinal.R;
 import com.example.kl7304qk.dahnkyfinal.model.Character;
 import com.example.kl7304qk.dahnkyfinal.model.Quest;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by Kyle on 12/10/2017.
  */
 
 public class QuestFragment extends Fragment {
-    ApiService apiService;
-
-    private ImageView image;
-    private TextView description;
-    private ImageView characterImage;
-    private TextView characterName;
-    private TextView characterDescription;
 
     public QuestFragment() {
     }
@@ -49,19 +38,13 @@ public class QuestFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        apiService = new ApiService();
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup group, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.quest_fragment, group, false);
-        image = view.findViewById(R.id.image);
-        description = view.findViewById(R.id.description);
-        characterImage = view.findViewById(R.id.characterImage);
-        characterName = view.findViewById(R.id.characterName);
-        characterDescription = view.findViewById(R.id.characterDescription);
+        ImageView image = view.findViewById(R.id.image);
+        TextView description = view.findViewById(R.id.description);
+        ImageView characterImage = view.findViewById(R.id.characterImage);
+        TextView characterName = view.findViewById(R.id.characterName);
+        TextView characterDescription = view.findViewById(R.id.characterDescription);
 
         Glide.with(getContext()).load(getArguments().getString("image")).into(image);
         description.setText(getArguments().getString("description"));

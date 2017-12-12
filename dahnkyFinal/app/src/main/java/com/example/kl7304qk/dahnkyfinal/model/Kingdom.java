@@ -8,15 +8,23 @@ import com.google.gson.annotations.SerializedName;
 
 public class Kingdom {
     @SerializedName("id")
-    private int id;
+    private final int id;
     @SerializedName("name")
-    private String name;
+    private final String name;
     @SerializedName("image")
-    private String image;
+    private final String image;
     @SerializedName("climate")
-    private String climate;
+    private final String climate;
     @SerializedName("population")
-    private int population;
+    private final int population;
+
+    public Kingdom(int id, String name, String image, String climate, int population) {
+        this.id = id;
+        this.name = name;
+        this.image = image;
+        this.climate = climate;
+        this.population = population;
+    }
 
     public int getId() {
         return id;

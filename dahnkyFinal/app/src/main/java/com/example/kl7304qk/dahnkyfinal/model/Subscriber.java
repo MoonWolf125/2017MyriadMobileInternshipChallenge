@@ -5,8 +5,8 @@ package com.example.kl7304qk.dahnkyfinal.model;
  */
 
 public class Subscriber {
-    private String name;
-    private String email;
+    private final String name;
+    private final String email;
 
     public Subscriber(String name, String email) {
         this.name = name;

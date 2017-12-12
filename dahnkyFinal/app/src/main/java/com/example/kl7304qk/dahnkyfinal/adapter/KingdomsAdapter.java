@@ -3,7 +3,6 @@ package com.example.kl7304qk.dahnkyfinal.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,6 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.kl7304qk.dahnkyfinal.API.ApiService;
 import com.example.kl7304qk.dahnkyfinal.R;
 import com.example.kl7304qk.dahnkyfinal.activity.KingdomDetailActivity;
-import com.example.kl7304qk.dahnkyfinal.activity.MainActivity;
 import com.example.kl7304qk.dahnkyfinal.model.Kingdom;
 
 import java.util.List;
@@ -30,9 +28,9 @@ import retrofit2.Response;
  */
 
 public class KingdomsAdapter extends RecyclerView.Adapter<KingdomsAdapter.ViewHolder> {
-    Context context;
-    ApiService apiService;
-    List<Kingdom> kingdoms;
+    private final Context context;
+    private final ApiService apiService;
+    private final List<Kingdom> kingdoms;
 
     public KingdomsAdapter(List<Kingdom> kingdoms, Context context) {
         this.context = context;
@@ -59,8 +57,8 @@ public class KingdomsAdapter extends RecyclerView.Adapter<KingdomsAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView kingdomImage;
-        TextView kingdomName;
+        final ImageView kingdomImage;
+        final TextView kingdomName;
         public ViewHolder(View itemView) {
             super(itemView);
 

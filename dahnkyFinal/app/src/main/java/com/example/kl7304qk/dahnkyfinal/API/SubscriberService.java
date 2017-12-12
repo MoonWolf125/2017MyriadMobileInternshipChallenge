@@ -11,7 +11,7 @@ import retrofit2.http.POST;
  * Created by Kyle on 12/8/2017.
  */
 
-public interface SubscriberService {
+interface SubscriberService {
     @POST("subscribe")
     @FormUrlEncoded
     Call<Subscriber> subscribe(@Field("email") String email);

@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.kl7304qk.dahnkyfinal.API.ApiService;
 import com.example.kl7304qk.dahnkyfinal.R;
 import com.example.kl7304qk.dahnkyfinal.activity.QuestDetailActivity;
 import com.example.kl7304qk.dahnkyfinal.model.Quest;
@@ -23,16 +22,14 @@ import java.util.List;
  */
 
 public class QuestsAdapter extends RecyclerView.Adapter<QuestsAdapter.ViewHolder> {
-    Context context;
-    ApiService apiService;
-    List<Quest> quests;
-    int position;
+    private final Context context;
+    private final List<Quest> quests;
+    private final int position;
 
     public QuestsAdapter(List<Quest> quests, int position, Context context) {
         this.context = context;
         this.quests = quests;
         this.position = position;
-        apiService = new ApiService();
     }
 
     @Override
@@ -54,8 +51,8 @@ public class QuestsAdapter extends RecyclerView.Adapter<QuestsAdapter.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView questImage;
-        TextView questName;
+        final ImageView questImage;
+        final TextView questName;
         public ViewHolder(final View itemView) {
             super(itemView);
 

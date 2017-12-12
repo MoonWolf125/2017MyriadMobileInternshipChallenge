@@ -18,18 +18,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Kyle on 12/8/2017.
  */
 
+@SuppressWarnings("ALL")
 public class ApiService {
-    private Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("https://challenge2015.myriadapps.com/api/v1/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build();
 
-    private KingdomService kingdomService;
-    private QuestService questService;
-    private CharacterService characterService;
-    private SubscriberService subscriberService;
+    private final KingdomService kingdomService;
+    private final QuestService questService;
+    private final CharacterService characterService;
+    private final SubscriberService subscriberService;
 
     public ApiService() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://challenge2015.myriadapps.com/api/v1/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
         kingdomService = retrofit.create(KingdomService.class);
         questService = retrofit.create(QuestService.class);
         characterService = retrofit.create(CharacterService.class);
@@ -62,16 +63,6 @@ public class ApiService {
         }
         catch (IOException e) {
             Log.d("ERROR : syncGetQuests", e.toString());
-            return null;
-        }
-    }
-
-    public Quest syncGetQuest(int kingdomID, int questID) {
-        try {
-            return questService.getQuest(kingdomID, questID).execute().body();
-        }
-        catch (IOException e) {
-            Log.d("ERROR : syncGetQuest", e.toString());
             return null;
         }
     }

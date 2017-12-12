@@ -29,11 +29,6 @@ import retrofit2.Response;
 
 public class KingdomFragment extends Fragment {
     private ApiService apiService;
-    private Kingdom kingdom;
-
-    private ImageView image;
-    private TextView climate;
-    private TextView population;
 
     private RecyclerView quests;
 
@@ -60,9 +55,9 @@ public class KingdomFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup group, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.kingdom_fragment, group, false);
 
-        image = view.findViewById(R.id.image);
-        climate = view.findViewById(R.id.climate);
-        population = view.findViewById(R.id.population);
+        ImageView image = view.findViewById(R.id.image);
+        TextView climate = view.findViewById(R.id.climate);
+        TextView population = view.findViewById(R.id.population);
         quests = view.findViewById(R.id.quests);
         quests.setLayoutManager(new LinearLayoutManager(getContext()));
 

@@ -1,6 +1,5 @@
 package com.example.kl7304qk.dahnkyfinal.activity;
 
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -9,10 +8,7 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.example.kl7304qk.dahnkyfinal.API.ApiService;
-import com.example.kl7304qk.dahnkyfinal.API.KingdomService;
-import com.example.kl7304qk.dahnkyfinal.API.QuestService;
 import com.example.kl7304qk.dahnkyfinal.R;
-import com.example.kl7304qk.dahnkyfinal.adapter.KingdomPagerAdapter;
 import com.example.kl7304qk.dahnkyfinal.adapter.QuestPagerAdapter;
 import com.example.kl7304qk.dahnkyfinal.model.Character;
 import com.example.kl7304qk.dahnkyfinal.model.Quest;
@@ -20,23 +16,16 @@ import com.example.kl7304qk.dahnkyfinal.model.Quest;
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
 /**
  * Created by Kyle on 12/10/2017.
  */
 
 public class QuestDetailActivity extends AppCompatActivity {
-    ApiService apiService;
-    ViewPager quest;
-    QuestPagerAdapter questPagerAdapter;
-    List<Quest> quests;
-    ArrayList<Character> characters = new ArrayList<>();
-    Bundle bundle;
+    private ApiService apiService;
+    private ViewPager quest;
+    private List<Quest> quests;
+    private final ArrayList<Character> characters = new ArrayList<>();
+    private Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +36,7 @@ public class QuestDetailActivity extends AppCompatActivity {
         bundle = getIntent().getExtras();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Quests getFull = new Quests(this);
+        Quests getFull = new Quests();
         getFull.execute();
     }
 
@@ -63,10 +52,8 @@ public class QuestDetailActivity extends AppCompatActivity {
     }
 
     public class Quests extends AsyncTask<Void, Integer, Boolean> {
-        Activity activity;
 
-        Quests(Activity activity) {
-            this.activity = activity;
+        Quests() {
         }
 
         @Override
@@ -86,7 +73,7 @@ public class QuestDetailActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(final Boolean result) {
             if (result) {
-                questPagerAdapter = new QuestPagerAdapter(bundle.getInt("position"), quests, characters, getSupportFragmentManager());
+                QuestPagerAdapter questPagerAdapter = new QuestPagerAdapter(quests, characters, getSupportFragmentManager());
                 quest.setAdapter(questPagerAdapter);
                 quest.setCurrentItem(bundle.getInt("position"));
                 setTitle(quests.get(bundle.getInt("position")).getName());
