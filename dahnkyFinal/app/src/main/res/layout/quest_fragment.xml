@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -9,7 +9,7 @@
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6"
+        android:layout_weight="5"
         android:src="@android:drawable/sym_def_app_icon"/>
 
     <TextView
@@ -36,8 +36,8 @@
 
             <ImageView
                 android:id="@+id/characterImage"
-                android:layout_width="@dimen/kingdomImageSize"
-                android:layout_height="@dimen/kingdomImageSize"
+                android:layout_width="@dimen/characterImageSize"
+                android:layout_height="@dimen/characterImageSize"
                 android:padding="@dimen/defPadding"
                 android:src="@android:drawable/sym_def_app_icon"/>
 
@@ -48,7 +48,7 @@
                 android:layout_gravity="center_vertical"
                 android:text="@string/test"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/nameTextSize"
+                android:textSize="@dimen/characterTextSize"
                 android:padding="@dimen/defPadding"/>
 
 
@@ -57,7 +57,7 @@
         <TextView
             android:id="@+id/characterDescription"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:text="@string/test"
             android:textColor="@android:color/black"/>
 

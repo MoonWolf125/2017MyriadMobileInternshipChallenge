@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -18,10 +17,6 @@ import com.example.kl7304qk.dahnkyfinal.activity.QuestDetailActivity;
 import com.example.kl7304qk.dahnkyfinal.model.Quest;
 
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * Created by Kyle on 12/10/2017.
@@ -64,13 +59,12 @@ public class QuestsAdapter extends RecyclerView.Adapter<QuestsAdapter.ViewHolder
         public ViewHolder(final View itemView) {
             super(itemView);
 
-            questImage = (ImageView) itemView.findViewById(R.id.questImage);
-            questName = (TextView) itemView.findViewById(R.id.questName);
+            questImage = itemView.findViewById(R.id.questImage);
+            questName = itemView.findViewById(R.id.questName);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(context, quests.get(getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
                     Intent Quest = new Intent(context, QuestDetailActivity.class);
                     Quest.putExtra("kingdom", position);
                     Quest.putExtra("position", getAdapterPosition());

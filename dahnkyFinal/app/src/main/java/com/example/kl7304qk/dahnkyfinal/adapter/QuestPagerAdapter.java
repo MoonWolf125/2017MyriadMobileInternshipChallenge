@@ -4,8 +4,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.example.kl7304qk.dahnkyfinal.model.Character;
 import com.example.kl7304qk.dahnkyfinal.model.Quest;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,16 +18,18 @@ import java.util.List;
 public class QuestPagerAdapter extends FragmentPagerAdapter {
     private int position;
     private List<Quest> quests;
+    private ArrayList<Character> characters;
 
-    public QuestPagerAdapter(int position, List<Quest> quests, FragmentManager fm) {
+    public QuestPagerAdapter(int position, List<Quest> quests, ArrayList<Character> characters, FragmentManager fm) {
         super(fm);
         this.position = position;
         this.quests = quests;
+        this.characters = characters;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return QuestFragment.newInstance(quests.get(position));
+        return QuestFragment.newInstance(quests.get(position), characters.get(position));
     }
 
     @Override

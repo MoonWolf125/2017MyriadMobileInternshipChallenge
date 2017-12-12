@@ -9,7 +9,7 @@
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6"
+        android:layout_weight="5"
         android:src="@android:drawable/sym_def_app_icon"/>
     
     <LinearLayout

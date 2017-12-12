@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="nameTextSize">40sp</dimen>
-    <dimen name="kingdomImageSize">86dp</dimen>
+    <dimen name="characterTextSize">20sp</dimen>
+    <dimen name="kingdomImageSize">76dp</dimen>
     <dimen name="questImageSize">48dp</dimen>
+    <dimen name="characterImageSize">60dp</dimen>
     <dimen name="defPadding">10dp</dimen>
     <dimen name="secPadding">32dp</dimen>
     <dimen name="questPadding">8dp</dimen>
     <dimen name="signUpTextSize">52sp</dimen>
-    <dimen name="loginTextSize">22sp</dimen>
+    <dimen name="loginTextSize">20sp</dimen>
 </resources>

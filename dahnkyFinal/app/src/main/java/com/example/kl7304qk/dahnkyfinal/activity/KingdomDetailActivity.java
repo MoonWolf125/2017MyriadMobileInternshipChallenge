@@ -1,27 +1,22 @@
 package com.example.kl7304qk.dahnkyfinal.activity;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.widget.Toast;
+import android.view.MenuItem;
 
 import com.example.kl7304qk.dahnkyfinal.API.ApiService;
 import com.example.kl7304qk.dahnkyfinal.API.KingdomService;
 import com.example.kl7304qk.dahnkyfinal.R;
-import com.example.kl7304qk.dahnkyfinal.adapter.KingdomFragment;
 import com.example.kl7304qk.dahnkyfinal.adapter.KingdomPagerAdapter;
 import com.example.kl7304qk.dahnkyfinal.model.Kingdom;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -42,29 +37,23 @@ public class KingdomDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_kingdoms);
         apiService = new ApiService();
         kingdom = (ViewPager) findViewById(R.id.kingdom);
+        bundle = getIntent().getExtras();
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Kingdoms getFull = new Kingdoms(this);
         getFull.execute();
-        bundle = getIntent().getExtras();
     }
 
-//    private void displayKingdom(final Bundle bundle) {
-//        apiService.getKingdom(bundle.getInt("position"), new Callback<Kingdom>() {
-//            @Override
-//            public void onResponse(Call<Kingdom> call, Response<Kingdom> response) {
-//                kingdomPagerAdapter = new KingdomPagerAdapter(bundle.getInt("position"),
-//                        response.body(), KingdomDetailActivity.this, getSupportFragmentManager());
-//                kingdom.setAdapter(kingdomPagerAdapter);
-//                kingdom.setCurrentItem(bundle.getInt("position"));
-//                setTitle(response.body().getName());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Kingdom> call, Throwable t) {
-//
-//            }
-//        });
-//    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
     public class Kingdoms extends AsyncTask<Void, Integer, Boolean> {
         Activity activity;
@@ -103,6 +92,22 @@ public class KingdomDetailActivity extends AppCompatActivity {
                 kingdom.setAdapter(kingdomPagerAdapter);
                 kingdom.setCurrentItem(bundle.getInt("position") - 1);
                 setTitle(kingdoms.get(bundle.getInt("position") - 1).getName());
+                kingdom.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                    @Override
+                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+                    }
+
+                    @Override
+                    public void onPageSelected(int position) {
+                        setTitle(kingdoms.get(position).getName());
+                    }
+
+                    @Override
+                    public void onPageScrollStateChanged(int state) {
+
+                    }
+                });
             }
         }
     }

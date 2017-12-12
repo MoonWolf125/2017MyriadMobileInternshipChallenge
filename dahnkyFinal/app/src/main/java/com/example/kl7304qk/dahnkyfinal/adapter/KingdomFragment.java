@@ -10,10 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.example.kl7304qk.dahnkyfinal.API.ApiService;
 import com.example.kl7304qk.dahnkyfinal.R;
 import com.example.kl7304qk.dahnkyfinal.model.Kingdom;
@@ -62,10 +60,10 @@ public class KingdomFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup group, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.kingdom_fragment, group, false);
 
-        image = (ImageView) view.findViewById(R.id.image);
-        climate = (TextView) view.findViewById(R.id.climate);
-        population = (TextView) view.findViewById(R.id.population);
-        quests = (RecyclerView) view.findViewById(R.id.quests);
+        image = view.findViewById(R.id.image);
+        climate = view.findViewById(R.id.climate);
+        population = view.findViewById(R.id.population);
+        quests = view.findViewById(R.id.quests);
         quests.setLayoutManager(new LinearLayoutManager(getContext()));
 
         Glide.with(this).load(getArguments().getString("image")).into(image);

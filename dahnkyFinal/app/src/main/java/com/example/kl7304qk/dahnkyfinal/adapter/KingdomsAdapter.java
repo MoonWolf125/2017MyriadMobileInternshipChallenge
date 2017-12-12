@@ -64,8 +64,8 @@ public class KingdomsAdapter extends RecyclerView.Adapter<KingdomsAdapter.ViewHo
         public ViewHolder(View itemView) {
             super(itemView);
 
-            kingdomImage = (ImageView) itemView.findViewById(R.id.kingdomImage);
-            kingdomName = (TextView) itemView.findViewById(R.id.kingdomName);
+            kingdomImage = itemView.findViewById(R.id.kingdomImage);
+            kingdomName = itemView.findViewById(R.id.kingdomName);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
