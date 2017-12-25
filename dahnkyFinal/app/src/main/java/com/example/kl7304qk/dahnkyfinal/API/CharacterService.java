@@ -12,6 +12,6 @@ import retrofit2.http.Path;
 
 @SuppressWarnings("DefaultFileTemplate")
 interface CharacterService {
-    @GET("characters/{characterID}/")
+    @GET("v1/characters/{characterID}/")
     Call<Character> getCharacter(@Path("characterID") int characterID);
 }

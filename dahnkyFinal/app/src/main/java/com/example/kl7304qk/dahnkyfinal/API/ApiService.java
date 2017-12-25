@@ -18,7 +18,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Kyle on 12/8/2017.
  */
 
-@SuppressWarnings("ALL")
 public class ApiService {
 
     private final KingdomService kingdomService;
@@ -28,7 +27,7 @@ public class ApiService {
 
     public ApiService() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://challenge2015.myriadapps.com/api/v1/")
+                .baseUrl("https://challenge2015.myriadapps.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         kingdomService = retrofit.create(KingdomService.class);

@@ -12,7 +12,7 @@ import retrofit2.http.POST;
  */
 
 interface SubscriberService {
-    @POST("subscribe")
+    @POST("v1/subscribe")
     @FormUrlEncoded
     Call<Subscriber> subscribe(@Field("email") String email);
 }

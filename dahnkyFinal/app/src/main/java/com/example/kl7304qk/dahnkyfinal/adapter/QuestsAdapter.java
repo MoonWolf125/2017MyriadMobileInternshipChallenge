@@ -62,11 +62,11 @@ public class QuestsAdapter extends RecyclerView.Adapter<QuestsAdapter.ViewHolder
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent Quest = new Intent(context, QuestDetailActivity.class);
-                    Quest.putExtra("kingdom", position);
-                    Quest.putExtra("position", getAdapterPosition());
-                    Quest.putExtra("count", getItemCount());
-                    context.startActivity(Quest);
+                    Intent quest = new Intent(context, QuestDetailActivity.class);
+                    quest.putExtra("kingdom", position);
+                    quest.putExtra("position", getAdapterPosition());
+                    quest.putExtra("count", getItemCount());
+                    context.startActivity(quest);
                 }
             });
         }

@@ -13,9 +13,9 @@ import retrofit2.http.Path;
  */
 
 interface QuestService {
-    @GET("kingdoms/{kingdomID}/quests/")
+    @GET("v1/kingdoms/{kingdomID}/quests/")
     Call<List<Quest>> getQuests(@Path("kingdomID") int kingdomID);
 
-    @GET("kingdoms/{kingdomID}/quests/{questID}/")
+    @GET("v1/kingdoms/{kingdomID}/quests/{questID}/")
     Call<Quest> getQuest(@Path("kingdomID") int kingdomID, @Path("questID") int questID);
 }

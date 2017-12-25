@@ -53,12 +53,12 @@ public class MainActivity extends AppCompatActivity {
         apiService.getKingdoms(new Callback<List<Kingdom>>() {
             @Override
             public void onResponse(Call<List<Kingdom>> call, Response<List<Kingdom>> response) {
-                kingdoms.setAdapter(new KingdomsAdapter(response.body(), getApplicationContext()));
+                kingdoms.setAdapter(new KingdomsAdapter(response.body(), MainActivity.this));
             }
 
             @Override
             public void onFailure(Call<List<Kingdom>> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "ERROR", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Kingdoms Not Loaded", Toast.LENGTH_SHORT).show();
             }
         });
     }

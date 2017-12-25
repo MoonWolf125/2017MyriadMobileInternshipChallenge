@@ -2,7 +2,7 @@
 <resources>
     <dimen name="nameTextSize">40sp</dimen>
     <dimen name="characterTextSize">20sp</dimen>
-    <dimen name="kingdomImageSize">76dp</dimen>
+    <dimen name="kingdomImageSize">80dp</dimen>
     <dimen name="questImageSize">48dp</dimen>
     <dimen name="characterImageSize">60dp</dimen>
     <dimen name="defPadding">10dp</dimen>

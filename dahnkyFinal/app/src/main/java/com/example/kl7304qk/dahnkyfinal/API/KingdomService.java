@@ -13,9 +13,9 @@ import retrofit2.http.Path;
  */
 
 interface KingdomService {
-    @GET("kingdoms/")
+    @GET("v1/kingdoms/")
     Call<List<Kingdom>> getKingdoms();
 
-    @GET("kingdoms/{kingdomID}/")
+    @GET("v1/kingdoms/{kingdomID}/")
     Call<Kingdom> getKingdom(@Path("kingdomID") int kingdomID);
 }

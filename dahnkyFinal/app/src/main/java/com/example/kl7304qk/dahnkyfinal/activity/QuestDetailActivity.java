@@ -80,7 +80,7 @@ public class QuestDetailActivity extends AppCompatActivity {
                 quest.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                     @Override
                     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
+                        //NO-OP
                     }
 
                     @Override
@@ -90,7 +90,7 @@ public class QuestDetailActivity extends AppCompatActivity {
 
                     @Override
                     public void onPageScrollStateChanged(int state) {
-
+                        //NO-OP
                     }
                 });
             }
