@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Kingdom>> call, Throwable t) {
-                Log.d("Kingdoms Call", t.toString());
                 Toast.makeText(MainActivity.this, "Kingdoms Not Loaded", Toast.LENGTH_SHORT).show();
             }
         });
