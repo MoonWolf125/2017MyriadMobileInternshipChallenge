@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Kingdom>> call, Throwable t) {
+                Log.d("Kingdoms Call", t.toString());
                 Toast.makeText(MainActivity.this, "Kingdoms Not Loaded", Toast.LENGTH_SHORT).show();
             }
         });
